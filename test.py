@@ -188,6 +188,7 @@ def left_over_choice_fn_option(left_over, player_dic, left_over_random):
         player_dic.remove(left_over_card_replace)
         player_dic.append(left_over_random)
         left_over.append(left_over_card_replace)
+        left_over.remove(left_over_random)
 
     elif left_over_card_user_input == "n":
         pass
@@ -248,6 +249,7 @@ def left_over_choice_fn_option_comp(left_over, computer_dic, left_over_random):
         computer_dic.remove(left_over_card_replace)
         computer_dic.append(left_over_random)
         left_over.append(left_over_card_replace)
+        left_over.remove(left_over_random)
 
     elif left_over_card_user_input == "n":
         pass
