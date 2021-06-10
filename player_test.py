@@ -1,6 +1,11 @@
 import test
 
 def player_test(common_set, player_dic, left_over):
+    if len(common_set) == 0:
+        for i in range(len(left_over)-1):
+            common_set.append(i)
+        else:
+            pass
     test.print_text(player_dic)
 
     club, diamond, heart, spade = test.set_sort_strip(player_dic)
@@ -19,7 +24,7 @@ def player_test(common_set, player_dic, left_over):
     if left_over_card_user_input == "n":
         common_set_random = test.common_set_choice_fn(common_set)
 
-        player_dic, left_over = test.common_set_choice_fn_option(common_set_random, player_dic, left_over)
+        player_dic, left_over = test.common_set_choice_fn_option(common_set_random, player_dic, left_over, common_set)
 
     elif left_over_card_user_input == "y":
         pass
