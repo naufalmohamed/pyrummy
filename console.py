@@ -26,20 +26,13 @@ victory = False
 while victory == False:
 
     common_set, player_dic, left_over, player_solved = player_test.player_test(common_set, player_dic, left_over)
-    player_solved_count = 0
-    for i in player_solved:
-        for x in i:
-            player_solved_count += 1
-    if player_solved_count == 13:
-        victory = True
-        print("Player Won")
-    else:
-        pass
-
+    
     print("""
 Computer is Playing now""")
 
     common_set, computer_dic, left_over, comp_solved = computer_test.computer_test(common_set, computer_dic, left_over)
+    
+   
     comp_solved_count = 0
     for i in comp_solved:
        for x in i:
@@ -50,8 +43,18 @@ Computer is Playing now""")
     else:
         pass
 
-
-    # counter += 1
+    
+    player_solved_count = 0
+    for i in player_solved:
+        for x in i:
+            player_solved_count += 1
+    if player_solved_count == 13:
+        victory = True
+        print("Player Won")
+    else:
+        pass
+   
+   # counter += 1
 
 
 
