@@ -157,7 +157,7 @@ SOLVED: {spade_solved}
 
 
 def left_over_choice_fn(left_over):
-    give_left_over_input = input("PRESS ANY KEY TO SEE CARD THROWN BY COMPUTER: ")
+    give_left_over_input = input("PRESS ENTER TO SEE CARD THROWN BY COMPUTER: ")
     left_over_random = left_over[-1]
     print(f"""
 CARD THROWN BY COMPUTER: {left_over_random}""")
@@ -165,10 +165,26 @@ CARD THROWN BY COMPUTER: {left_over_random}""")
 
 
 def left_over_choice_fn_option(left_over, player_dic, left_over_random):
-    left_over_card_user_input = input("Would you like to take this card (y/n): ")
+    error = True
+    while error == True:
+        left_over_card_user_input = input("Would you like to take this card (y/n): ")
+        if left_over_card_user_input == "y":
+            error = False
+        elif left_over_card_user_input == "n":
+            error = False
+        else:
+            error = True
+            print("Invalid Input! Try again")
+    
 
     if left_over_card_user_input == "y":
-        left_over_card_replace = input("WHICH CARD DO YO U WANNA REPLACE?: ")
+        error = True
+        while error == True:
+            left_over_card_replace = input("WHICH CARD DO YO U WANNA REPLACE?: ")
+            if left_over_card_replace in player_dic:
+                error = False
+            else:
+                error = True
         player_dic.remove(left_over_card_replace)
         player_dic.append(left_over_random)
         left_over.append(left_over_card_replace)
@@ -179,21 +195,40 @@ def left_over_choice_fn_option(left_over, player_dic, left_over_random):
     return left_over_card_user_input, player_dic, left_over
 
 def common_set_choice_fn(common_set):
-    give_common_set_input = input("PRESS ANY KEY TO SEE A CARD FROM COMMON SET: ")
+    give_common_set_input = input("PRESS ENTER TO SEE A CARD FROM COMMON SET: ")
     common_set_random = random.choice(common_set)
     print(f"""
 CARD FROM COMMON SET: {common_set_random}""")
     return common_set_random
 
 
-def common_set_choice_fn_option(common_set_random, player_dic, left_over):
-    common_set_card_user_input = input("Would you like to take this card (y/n): ")
+def common_set_choice_fn_option(common_set_random, player_dic, left_over, common_set):
+    error = True
+    while error == True:
+        common_set_card_user_input = input("Would you like to take this card (y/n): ")
+
+        if common_set_card_user_input == "y":
+            error = False
+        elif common_set_card_user_input == "n":
+            error = False
+        else:
+            error = True
+            print("Invalid Input! Try again")
 
     if common_set_card_user_input == "y":
-        common_set_card_replace = input("WHICH CARD DO YO U WANNA REPLACE?: ")
+        error = True
+        while error == True:
+                common_set_card_replace = input("WHICH CARD DO YO U WANNA REPLACE?: ")
+                if common_set_card_replace in player_dic:
+                    error = False
+                else:
+                    error = True
+                    print("Invalid Input! Try Again")
+
         player_dic.remove(common_set_card_replace)
         player_dic.append(common_set_random)
         left_over.append(common_set_random)
+        common_set.remove(common_set_random)
 
     elif common_set_card_user_input == "n":
         left_over.append(common_set_random)
@@ -225,7 +260,7 @@ def common_set_choice_fn_comp(common_set):
     return common_set_random
 
 
-def common_set_choice_fn_option_comp(common_set_random, computer_dic, left_over):
+def common_set_choice_fn_option_comp(common_set_random, computer_dic, left_over, common_set):
     choices = ["y","n"]
     common_set_card_user_input = random.choice(choices)
 
@@ -234,6 +269,7 @@ def common_set_choice_fn_option_comp(common_set_random, computer_dic, left_over)
         computer_dic.remove(common_set_card_replace)
         computer_dic.append(common_set_random)
         left_over.append(common_set_card_replace)
+        common_set.remove(common_set_random)
 
     elif common_set_card_user_input == "n":
         left_over.append(common_set_random)
