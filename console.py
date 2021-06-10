@@ -3,7 +3,6 @@ import computer_test
 import test
 import computer_start
 
-
 dic = ["D1","D2","D3","D4","D5","D6","D7","D8","D9","D10","D11","D12","D13",
 
 "H1","H2","H3","H4","H5","H6","H7","H8","H9","H10","H11","H12","H13",
@@ -30,10 +29,7 @@ while victory == False:
         victory = True
     else:
         pass
-
-    print(f"""
-{len(player_solved)}
-""")
+    
     print("""
 Computer is Playing now""")
 
@@ -45,7 +41,6 @@ Computer is Playing now""")
         pass
 
     # counter += 1
-
 
 
 
