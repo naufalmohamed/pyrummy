@@ -35,6 +35,28 @@ def player_test(common_set, player_dic, left_over):
     player_solved = test.solved_append(player_solved, heart_solved)
     player_solved = test.solved_append(player_solved, spade_solved)
 
+    player_solved_count = 0
+    if len(player_solved) == 3:
+        
+        club, diamond, heart, spade = test.set_sort_strip(player_dic)
+
+        club_outputt, club_odd_ones_out, club_solved = test.master_sort(club)
+        diamond_outputt, diamond_odd_ones_out, diamond_solved = test.master_sort(diamond)
+        heart_outputt, heart_odd_ones_out, heart_solved = test.master_sort(heart)
+        spade_outputt, spade_odd_ones_out, spade_solved = test.master_sort(spade)
+
+
+        player_solved = []
+        player_solved = test.solved_append(player_solved, club_solved)
+        player_solved = test.solved_append(player_solved, diamond_solved)
+        player_solved = test.solved_append(player_solved, heart_solved)
+        player_solved = test.solved_append(player_solved, spade_solved)
+    
+    else:
+        pass
+
+
+
     return common_set, player_dic, left_over, player_solved
 
 

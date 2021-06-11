@@ -228,7 +228,7 @@ def common_set_choice_fn_option(common_set_random, player_dic, left_over, common
 
         player_dic.remove(common_set_card_replace)
         player_dic.append(common_set_random)
-        left_over.append(common_set_random)
+        left_over.append(common_set_card_replace)
         common_set.remove(common_set_random)
 
     elif common_set_card_user_input == "n":

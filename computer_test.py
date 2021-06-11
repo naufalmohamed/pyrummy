@@ -37,6 +37,23 @@ def computer_test(common_set, computer_dic, left_over):
     comp_solved = test.solved_append(comp_solved, heart_solved)
     comp_solved = test.solved_append(comp_solved, spade_solved)
 
+    if len(comp_solved) == 3:
+
+        club, diamond, heart, spade = test.set_sort_strip(computer_dic)
+
+        club_outputt, club_odd_ones_out, club_solved = test.master_sort(club)
+        diamond_outputt, diamond_odd_ones_out, diamond_solved = test.master_sort(diamond)
+        heart_outputt, heart_odd_ones_out, heart_solved = test.master_sort(heart)
+        spade_outputt, spade_odd_ones_out, spade_solved = test.master_sort(spade)
+        
+        comp_solved = []
+        comp_solved = test.solved_append(comp_solved, club_solved)
+        comp_solved = test.solved_append(comp_solved, diamond_solved)
+        comp_solved = test.solved_append(comp_solved, heart_solved)
+        comp_solved = test.solved_append(comp_solved, spade_solved)
+    else:
+        pass
+        
 
     return common_set, computer_dic, left_over, comp_solved
 
