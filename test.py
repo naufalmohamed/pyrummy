@@ -185,6 +185,7 @@ def left_over_choice_fn_option(left_over, player_dic, left_over_random):
                 error = False
             else:
                 error = True
+                print("Invalid Input! Try Again")
         player_dic.remove(left_over_card_replace)
         player_dic.append(left_over_random)
         left_over.append(left_over_card_replace)
