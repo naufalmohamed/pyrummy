@@ -16,7 +16,7 @@ Welcome to the Rummy Game project! This is a Python implementation of the classi
 
 ## Installation
 1. Make sure you have Python 3 installed on your system. If not, you can download it from [here](https://www.python.org/downloads/).
-2. Clone this repository to your local machine:
+2. Clone this repository to your local machine.
 3. Run console.py
 
 ## Contributing
