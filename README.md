@@ -1,5 +1,7 @@
 # Rummy Game
 FYI One of my first coding projects. Kindly bear the shabby code. 
+
+
 Welcome to the Rummy Game project! This is a Python implementation of the classic card game Rummy, playable in the terminal.
 
 ## Table of Contents
